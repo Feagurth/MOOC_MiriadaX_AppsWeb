@@ -1,0 +1,80 @@
+<!--
+Copyright (C) 2016 Luis Cabrerizo Gomez
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
+-->
+<!doctype html>
+<html>
+    <head>
+        <style>
+            /*   
+            * A = 0 estilos de linea 
+            * B = 1 ID
+            * C = 0 clases
+            * D = 2 marcas
+            * Puntuación = 0, 1, 0, 2
+            */
+            #caja header h1{ color: green;} 
+
+            /*
+            * A = 0 estilos de linea 
+            * B = 1 ID
+            * C = 1 clases
+            * D = 2 marcas
+            * Puntuación = 0, 1, 1, 2
+            * Regla Ganadora !!!
+            */
+            body #caja .cabecera h1{ color: red;}
+
+            /*
+            * A = 0 estilos de linea 
+            * B = 1 ID
+            * C = 1 clases
+            * D = 1 marcas
+            * Puntuación = 0, 1, 1, 1            
+            */
+            #caja .cabecera h1{ color: blue;}
+
+            /*
+            * A = 0 estilos de linea 
+            * B = 0 ID
+            * C = 0 clases
+            * D = 2 marcas
+            * Puntuación = 0, 0, 0, 2
+            */
+            header h1{ color: yellow;}
+
+            /*
+            * A = 0 estilos de linea 
+            * B = 0 ID
+            * C = 0 clases
+            * D = 1 marcas
+            * Puntuación = 0, 0, 0, 1            
+            */
+            h1{ color: pink;}            
+
+        </style>
+        <meta charset="UTF-8">
+        <title>Herencia</title>
+    </head>
+    <body>
+        <div id="caja">
+            <header class="cabecera">
+                <h1>Cabecera: header</h1>
+            </header>
+
+        </div>
+    </body>
+</html>
