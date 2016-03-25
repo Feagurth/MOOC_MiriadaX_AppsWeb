@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<!--
+Copyright (C) 2016 Luis Cabrerizo Gómez
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
+-->
+<html>
+    <head>
+        <title>Responsive Media</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">     
+        <style type="text/css">
+
+            .contenedor div {
+                margin-top: 15px;
+                padding-top: 15px;
+                border-top: 1px solid black;
+            }
+
+            .imagen1{
+                width: 840px;
+                height: 630px;
+            }            
+            
+            
+            .imagen2{
+                width: 420px;
+                height: 315px;
+            }
+
+            .imagen3{
+                width: 210px;
+                height: 107px;
+            }
+
+            .imagen4{
+                width: 105px;
+                height: 56px;
+            }
+
+
+        </style>
+    </head>
+    <body>
+        <div>
+            <div class="contenedor">
+                <picture>
+                    <source
+                        media="(min-width: 1100px)"
+                        srcset="images/shaum6.jpg">
+                    <source
+                        media="(min-width: 1000px)"
+                        srcset="images/shaum5.jpg">
+                    <source
+                        media="(min-width: 800px)"
+                        srcset="images/shaum4.jpg">
+                    <source
+                        media="(min-width: 600px)"
+                        srcset="images/shaum3.jpg">
+                    <source
+                        media="(min-width: 400px)"
+                        srcset="images/shaum2.jpg">
+                    <source
+                        media="(min-width: 300px)"
+                        srcset="images/shaum1.jpg">
+                    <img
+                        src="images/shaum1.jpg"
+                        alt="shaum">
+                </picture>
+
+                <div>
+                    <iframe width="420" height="315" src="https://www.youtube.com/embed/7biebrr7BBc" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div>
+                    <object class="imagen1" type="image/svg+xml" data="images/Moire_circles.svg"></object>            
+                    <object class="imagen2" type="image/svg+xml" data="images/Moire_circles.svg"></object>
+                    <object class="imagen3" type="image/svg+xml" data="images/Moire_circles.svg"></object>            
+                    <object class="imagen4" type="image/svg+xml" data="images/Moire_circles.svg"></object>            
+                </div>
+            </div>
+        </div>    
+    </body>
+</html>
