@@ -21,10 +21,448 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
         <title>Página personal de Luis Cabrerizo Gómez</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link type="text/css" rel="stylesheet" href="estilos.css" />
+        <link href='https://fonts.googleapis.com/css?family=Crimson+Text' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Patua+One' rel='stylesheet' type='text/css'>
     </head>
     <body>
-        <div>
+        <header class="cabecera contenedor">
             <h1>Página personal de Luis Cabrerizo Gómez</h1>
+        </header>
+
+        <article class="contenedor">
+            <h2>Datos Personales</h2>
+            <div class="alignIzq">
+                <p>Luís Cabrerizo Gómez</p>
+                <p>Fecha de Nacimiento.- 15-06-1977</p>
+                <p>Dirección.- 13 Rue del Percebe</p>
+                <p>Teléfono.- 666666666 / 555555555 </p>
+                <p>Carné de conducir clase B - Vehículo propio</p>    
+            </div>
+            <div class="alignDrc">
+                <img src="images/foto.jpg" alt="Foto Luis Cabrerizo Gómez"/>
+            </div>
+
+        </article>
+
+        <article class="clear"></article>
+        <article class="contenedor">
+            <h2>Estudios</h2>
+            <p>Ha día de hoy tengo cursados 2 Ciglos Fomartivos de Grado Superior en informática.</p>
+            <ul>
+                <li>Ciclo Formativo de Grado Superior en Desarrollo de Aplicaciones Informáticas (2001)</li>
+                <li>Ciclo Formativo de Grado Superior en Desarrollo de Aplicaciones Web (2015)</li>
+            </ul>
+        </article>
+
+        <article class="contenedor">
+            <h2>Lenguajes de Programación y Tecnologías conocidas</h2>
+            <p>Actualmente he trabajado con los siguientes lenguajes de programación o tecnologías:  </p>
+            <div class="listaDoble">
+                <ul>
+                    <li>C#</li>
+                    <li>VB.NET</li>
+                    <li>Visual Basic 6</li>
+                    <li>PL/SQL</li>
+                    <li>Transact-SQL</li>
+                    <li>VBScript</li>
+                    <li>Javascript</li>
+                    <li>ASP .NET</li>
+                    <li>HTML</li>
+                    <li>XML</li>
+                    <li>XSL</li>
+                </ul>
+                <ul>
+                    <li>CSS</li>
+                    <li>Crystal Reports</li>
+                    <li>Pascal</li>
+                    <li>Modula-2</li>
+                    <li>Cobol</li>
+                    <li>Python</li>
+                    <li>Processing</li>
+                    <li>PHP</li>
+                    <li>Google Web Toolkit</li>
+                    <li>OpenXava</li>                                
+                </ul>
+            </div>
+            <div class="clear"></div>
+        </article>
+
+        <article class="contenedor experiencia">
+            <h2>Experiencia Profesional</h2>
+            <p>Ha día de hoy, he trabajado en los puestos especificados a continuación: </p>
+            <ul>
+                <li>
+                    <section>
+                        <h3>Programador Java</h3>
+                        <p><span class="negrita">3 meses</span> (Septiembre 2015 – Noviembre 2015)  - Empresa A</p>
+                        <p><span class="cursiva">Programador Java en prácticas como parte del C.F.G.S Desarrollo de Aplicaciones Web. Desarrollo de aplicaciones en OpenXava y Google Web Toolkit.
+                                Desarrollo de una capa para acceso a base datos que para centralizar las peticiones tanto en OpenXava como en GWT mediante el uso de llamadas RPC. Así mismo se dotó de la capacidad de realizar procedimientos síncronos de forma genérica que hasta el momento no estaban disponibles.</span></p>
+                    </section>
+                </li>
+                <li>
+                    <section>
+                        <h3>Jefe de Proyecto y programador de aplicaciones .NET</h3>
+                        <p><span class="negrita">10 meses</span> (Agosto 2010 – Mayo 2011)  - Empresa B</p>
+                        <p><span class="cursiva">Gestión de proyecto y desarrollo de una aplicación de gestión para gestión de comisarías de policía en VB .NET con informes desarrollados en Crystal Reports.</span></p>
+                    </section>
+                </li>
+                <li>
+                    <section>
+                        <h3>Programador de aplicaciones .NET, desarrollador Web y creador de informes en Crystal Reports.</h3>
+                        <p><span class="negrita">5 años</span> (Octubre 2005 – Febrero 2010)  - Empresa C</p>
+                        <p><span class="cursiva">Participación en el desarrollo de una aplicación de gestión para centros públicos de enseñanza en C#. Creación de páginas para entorno web corporativo mediante herramientas CASE, HTML, XML, XSL y CSS.</span></p>
+                    </section>
+                </li>
+                <li>
+                    <section>
+                        <h3>Programador de aplicaciones Visual Basic y desarrollador Web.</h3>
+                        <p><span class="negrita">2 años</span> (Junio 2001 – Febrero 2004)  - Empresa D</p>
+                        <p><span class="cursiva">Creación de aplicación para gestión de autómatas de riego y comunicación con los mismos mediante mensajería SMS en Visual Basic 6. Desarrollo de aplicaciones de uso interno para la compañía.</span></p>
+                    </section>
+                </li>
+                <li>
+                    <section>
+                        <h3>Encargado de la atención al cliente y supervisor del servicio técnico. </h3>
+                        <p><span class="negrita">10 meses</span> (Junio 1997 – Abril 1998)  - Empresa E</p>
+                        <p><span class="cursiva">Encargado del Servicio Técnico, tanto de Hardware como de Software, así como del trato al cliente.</span></p>
+                    </section>
+                </li>
+            </ul>
+        </article>
+
+        <div class="contenedor">
+            <h2>Cursos Realizados</h2>
+            <p>A lo largo de mi actividad profesional he realizado los cursos especificados en la siguiente tabla</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Fecha</th>
+                        <th>Título</th>
+                        <th>Entidad</th>
+                        <th>Horas</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2015</td>
+                        <td>Usable Security</td>
+                        <td>University of Maryland, College Park</td>
+                        <td>120</td>
+                    </tr>
+                    <tr class="alt">
+                        <td>2014</td>
+                        <td>Programming Cloud Services for Android Handheld Systems</td>
+                        <td>Vanderbilt University</td>
+                        <td>120</td>
+                    </tr>
+                    <tr>
+                        <td>2014</td>
+                        <td>Programming for Everybody (Python)</td>
+                        <td>University of Michigan</td>
+                        <td>120</td>
+                    </tr>
+                    <tr class="alt">
+                        <td>2014</td>
+                        <td>Pattern-Oriented Software Architectures: Programming Mobile Services for Android Handheld Systems</td>
+                        <td>Vanderbilt University</td>
+                        <td>120</td>
+                    </tr>
+                    <tr>
+                        <td>2014</td>
+                        <td>Programming Mobile Applications for Android Handheld Systems</td>
+                        <td>University of Maryland, College Park</td>
+                        <td>120</td>
+                    </tr>
+                    <tr class="alt">
+                        <td>2013</td>
+                        <td>Creative, Serious and Playful Science of Android Apps</td>
+                        <td>University of Illinois at Urbana-Champaign</td>
+                        <td>120</td>
+                    </tr>
+                    <tr>
+                        <td>2013</td>
+                        <td>Curso de Desarrollo de Aplicaciones para Android</td>
+                        <td>Universidad Galileo</td>
+                        <td>120</td>
+                    </tr>
+                    <tr class="alt">
+                        <td>2013</td>
+                        <td>Beginning Game Programming with C# </td>
+                        <td>University of Colorado</td>
+                        <td>120</td>
+                    </tr>
+                    <tr>
+                        <td>2013</td>
+                        <td>Creative Programming for Digital Media & Mobile Apps</td>
+                        <td>University of London International Programmes</td>
+                        <td>120</td>
+                    </tr>
+                    <tr class="alt">
+                        <td>2013</td>
+                        <td>An Introduction to Interactive Programming in Python</td>
+                        <td>Rice University</td>
+                        <td>120</td>
+                    </tr>
+                    <tr>
+                        <td>2013</td>
+                        <td>Algorithms, Part I</td>
+                        <td>Princeton University</td>
+                        <td>120</td>
+                    </tr>
+                    <tr class="alt">
+                        <td>2013</td>
+                        <td>Introduction to Computer Networks </td>
+                        <td>University of Washington</td>
+                        <td>120</td>
+                    </tr>
+                    <tr>
+                        <td>2008 
+                        <td>Transforming and Formatting XML
+                        <td>Getronics Iberia 
+                        <td>8 
+                    </tr>
+                    <tr class="alt">
+                        <td>2008 
+                        <td>Style Sheets and Links
+                        <td>Getronics Iberia 
+                        <td>8 
+                    </tr>
+                    <tr>
+                        <td>2008 
+                        <td>JavaScript: Language Basics 
+                        <td>Getronics Iberia 
+                        <td>8 
+                    </tr>
+                    <tr class="alt">
+                        <td>2007 
+                        <td>C# 2005: Customized Programming 
+                        <td>Getronics Iberia 
+                        <td>8 
+                    </tr>
+                    <tr>
+                        <td>2006 
+                        <td>Extending XML 
+                        <td>Getronics Iberia 
+                        <td>8 
+                    </tr>
+                    <tr class="alt">
+                        <td>2006 
+                        <td>XML Language Basics 
+                        <td>Getronics Iberia 
+                        <td>8 
+                    </tr>
+                    <tr>
+                        <td>2006</td>
+                        <td>XML Data Access In C#</td>
+                        <td>Getronics Iberia</td>
+                        <td>8</td>
+                    </tr>
+                    <tr class="alt">
+                        <td>2006</td>
+                        <td>Customizing Controls And Events In C#</td>
+                        <td>Getronics Iberia</td>
+                        <td>8</td>
+                    </tr>
+                    <tr>
+                        <td>2006</td>
+                        <td>.NET Remoting In C#</td>
+                        <td>Getronics Iberia</td>
+                        <td>8</td>
+                    </tr>
+                    <tr class="alt">
+                        <td>2006</td>
+                        <td>Inside C#</td>
+                        <td>Getronics Iberia</td>
+                        <td>8</td>
+                    </tr>
+                    <tr>
+                        <td>2006</td>
+                        <td>Using T-SQL In SQL Server</td>
+                        <td>Getronics Iberia</td>
+                        <td>8</td>
+                    </tr>
+                    <tr class="alt">
+                        <td>2006</td>
+                        <td>PL / SQL Packages</td>
+                        <td>Getronics Iberia</td>
+                        <td>8</td>
+                    </tr>
+                    <tr>
+                        <td>2006</td>
+                        <td>PL / SQL Using Control Structures</td>
+                        <td>Getronics Iberia</td>
+                        <td>8</td>
+                    </tr>
+                    <tr class="alt">
+                        <td>2006</td>
+                        <td>Using PL / SQL with an Oracle Server</td>
+                        <td>Getronics Iberia</td>
+                        <td>8</td>
+                    </tr>
+                    <tr>
+                        <td>2006</td>
+                        <td>Introduction to PL / SQL</td>
+                        <td>Getronics Iberia</td>
+                        <td>8</td>
+                    </tr>
+                    <tr class="alt">
+                        <td>2006</td>
+                        <td>PL / SQL</td>
+                        <td>Getronics Iberia</td>
+                        <td>15</td>
+                    </tr>
+                    <tr>
+                        <td>2006</td>
+                        <td>Programming C# for the VB6 Developer</td>
+                        <td>Getronics Iberia</td>
+                        <td>24</td>
+                    </tr>
+                    <tr class="alt">
+                        <td>2006</td>
+                        <td>Beginning C#</td>
+                        <td>Getronics Iberia</td>
+                        <td>8</td>
+                    </tr>
+                    <tr>
+                        <td>2006</td>
+                        <td>Advanced HTML Design Elements</td>
+                        <td>Getronics Iberia</td>
+                        <td>8</td>
+                    </tr>
+                    <tr class="alt">
+                        <td>2006</td>
+                        <td>Deployment of Windows-Based .NET Applications</td>
+                        <td>Getronics Iberia</td>
+                        <td>7</td>
+                    </tr>
+                    <tr>
+                        <td>2006</td>
+                        <td>What Microsoft .NET Means for IT Professionals</td>
+                        <td>Getronics Iberia</td>
+                        <td>5</td>
+                    </tr>
+                    <tr class="alt">
+                        <td>2006</td>
+                        <td>Curso de Cobol</td>
+                        <td>Getronics Iberia</td>
+                        <td>20</td>
+                    </tr>
+                    <tr>
+                        <td>2006</td>
+                        <td>Advanced Technology Concepts for Web Designers</td>
+                        <td>Getronics Iberia</td>
+                        <td>5</td>
+                    </tr>
+                    <tr class="alt">
+                        <td>2006</td>
+                        <td>Web Development Fundamentals
+                        <td>Getronics Iberia</td>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <td>2003</td>
+                        <td>SQL Server para analistas</td>
+                        <td>Grupo Hispatec</td>
+                        <td>12</td>
+                    </tr>
+                    <tr class="alt">
+                        <td>2003</td>
+                        <td>XML</td>
+                        <td>Grupo Hispatec</td>
+                        <td>16</td>
+                    </tr>
+                    <tr>
+                        <td>1999</td>
+                        <td>Curso de Bases de Datos</td>
+                        <td>CC.OO Almería.</td>
+                        <td>250</td>
+                    </tr>
+
+
+                </tbody>
+            </table>
         </div>
+
+
+        <article class="contenedor">
+            <h2>Aficiones</h2>
+            <ul>
+                <li>Lectura: Entre mis géneros favoritos se encuentran los siguientes: 
+                    <ul>
+                        <li>Fantasía</li>
+                        <li>Terror</li>
+                        <li>Cienca Ficcíón</li>
+                    </ul>
+                </li>                        
+                <li>Cine: Los siguientes tipos de películas son las que más disfruto: 
+                    <ul>
+                        <li>Terror</li>
+                        <li>Superhéroes</li>
+                        <li>Comedias románticas</li>
+                        <li>Artes Marciales</li>                            
+                    </ul>
+                </li>                    
+                <li>Musica: Suelo escuchar mucho: 
+                    <ul>
+                        <li>Bandas Sonoras</li>
+                        <li>Hip-Hop</li>
+                        <li>Funk</li>
+                        <li>Jazz</li>
+                        <li>Blues</li>
+                    </ul>
+                </li>
+                <li>Videojuegos: Suelo perder mi tiempo con juegos de los siguientes tipos: 
+                    <ul>
+                        <li>Juegos de Rol</li>
+                        <li>Arcades</li>
+                        <li>Plataformas</li>
+                        <li>Aventuras</li>
+                    </ul>
+                </li>
+                <li>Juego de Rol: Aparte de los videojuegos también practico los siguientes juegos de rol: 
+                    <ul>
+                        <li>La llamada de Cthulhu</li>
+                        <li>Dungeons & Dragons</li>
+                        <li>MERP: Middle Earth RolePlaying Game</li>
+                        <li>Vampiro: La Mascarada</li>
+                        <li>Shadowrun</li>
+                    </ul>
+                </li>
+            </ul>
+
+        </article>
+
+        <article class="contenedor">
+            <h2>Ejemplo de aplicación web desarrollada</h2>
+            <div>
+                <iframe src="https://www.youtube.com/embed/qiqzUc2tkt0" frameborder="0" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/JGxWHOQw9Kc" frameborder="0" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/V-LmkGnTH_4" frameborder="0" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/KK3lbsa3sW0" frameborder="0" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/uY1ntfn9RKo" frameborder="0" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/VTZl5Mf9Bz4" frameborder="0" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/SWnJ2iuVrlk" frameborder="0" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/yGRm8hUL9h8" frameborder="0" allowfullscreen></iframe>
+
+            </div>
+
+        </article>
+
+        <footer class="contenedor">
+            <div class="logo1">
+                <object type="image/svg+xml" data="images/HTML5.svg">Diseñado en HTML5</object>
+            </div>          
+            <div class="middle">
+                <span>&copy; Luis Cabrerizo Gómez (2016)</span>
+                <span>&REG; Zuleicos Asociados S.L. (2016)</span>
+                <span>I &heartsuit; Coding...!</span>
+
+            </div>
+            <div class="logo2">
+                <object type="image/svg+xml" data="images/css3.svg">Estilos con CSS3</object>
+            </div>
+        </footer>
+
     </body>
 </html>

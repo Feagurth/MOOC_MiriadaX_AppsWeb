@@ -1,0 +1,198 @@
+/*
+Copyright (C) 2016 Luis Cabrerizo Gómez
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
+*/
+/* 
+    Created on : 26-mar-2016, 17:51:34
+    Author     : Luis Cabrerizo Gómez
+*/
+
+*{
+    font-family: 'Crimson Text', serif;
+    color: #FF1919;
+}
+
+h1{
+    margin: 10px;
+    padding: 10px;
+
+}
+
+h1, h2, h3{
+    font-family: 'Patua One', cursive;
+    color: black;
+}
+
+ul
+{
+    list-style: square;
+}
+
+.cabecera{
+    width: 100%;
+    text-align: center;
+        
+}
+
+
+.listaDoble ul {
+    display: block;
+    float: left;
+    margin-right: 10%;    
+}
+
+.experiencia ul{
+    list-style: none;
+}
+
+.listaDoble ul li{
+    width: 200%;
+}
+
+.clear{
+    clear: both;
+}
+
+.negrita{
+    font-weight: bold;
+}
+
+.cursiva{
+    font-style: italic;
+}
+
+.contenedor{
+
+    width: 98%;
+
+    border-radius: 10px 10px 10px 10px;
+    -moz-border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
+    border: 1px solid #000000;    
+    margin: 10px;
+    padding: 10px;
+
+    background: rgba(164,179,87,1);
+    background: -moz-linear-gradient(left, rgba(164,179,87,1) 0%, rgba(117,137,12,1) 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, rgba(164,179,87,1)), color-stop(100%, rgba(117,137,12,1)));
+    background: -webkit-linear-gradient(left, rgba(164,179,87,1) 0%, rgba(117,137,12,1) 100%);
+    background: -o-linear-gradient(left, rgba(164,179,87,1) 0%, rgba(117,137,12,1) 100%);
+    background: -ms-linear-gradient(left, rgba(164,179,87,1) 0%, rgba(117,137,12,1) 100%);
+    background: linear-gradient(to right, rgba(164,179,87,1) 0%, rgba(117,137,12,1) 100%);
+
+    display: block;
+    float: left;
+
+}
+
+
+
+table { 
+    border-collapse: collapse; 
+    text-align: left; 
+    width: 100%; 
+} 
+
+table td, table th { 
+    padding: 3px 10px; 
+}
+
+table thead th {
+    background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #36752D), color-stop(1, #275420) );
+    background:-moz-linear-gradient( center top, #36752D 5%, #275420 100% );    
+    background-color:#36752D; 
+    color:#FFFFFF;     
+    font-weight: bold; 
+    border: 1px solid #36752D;    
+} 
+
+table tbody td { 
+    color: #FF1919; 
+    border: 1px solid #C6FFC2;    
+}
+
+table tbody .alt td { 
+    background: #179620; 
+    color: #FF1919; 
+}
+
+.alignIzq{
+    display: block;
+    float: left;
+    width: 50%;
+}
+
+.alignDrc{
+    display: block;
+    float: right;    
+    width: 50%;
+}
+
+.alignDrc img{
+    float: right;    
+}
+
+
+iframe{
+    width: 33%;        
+    height: 20em;
+
+}
+
+footer{
+    display: block;
+}
+
+
+footer .logo1{
+    width: 10%;
+    float: left;
+}
+
+footer .logo2{
+    width: 10%;
+    float: right;
+}
+
+footer .logo1 object{
+    width: 25%;
+    height: 25%;
+    padding-top: 10px;
+}
+
+footer .logo2 object{
+    width: 18%;
+    height: 18%;
+    float: right;
+    padding-top: 10px;
+}
+
+
+footer .middle{    
+    width: 75%;
+    float: left;
+    height: 4em;
+}
+
+
+
+footer .middle span {
+    width: 100%;
+    text-align: center;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 100%;
+}
