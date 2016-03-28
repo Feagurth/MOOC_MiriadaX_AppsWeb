@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<!--
+Copyright (C) 2016 Luis Cabrerizo Gómez
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
+-->
+<html>
+    <head>
+        <title>Date</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <h1 id="h1"></h1>
+        <h2 id="h2">La fecha y la hora son:</h2>
+        <div id="fecha"></div>
+        <div id="propiedades"></div>
+
+        <script type="text/javascript">
+
+            // Definimos una variable para almacenar el nombre del alumno
+            var nombreAlumno = "Luis Cabrerizo Gómez";
+
+            // Definimos un nuevo objeto Date
+            var fecha = new Date();
+
+            // Declaramos una variable para almacenar el mensaje de salida
+            var msj;
+
+            // Comprobamos si la hora del sistema es inferior a 7, esto es, 7 A.M.
+            if (fecha.getHours() < 7) {
+                // Si es así, asignamos el valor de la variable con un mensaje nocturno
+                msj = "Buenas noches";
+            }
+            // Si no es el caso, comprobamos si la hora del sistema es inferior a 12, esto es, 12 A.M.
+            else if (fecha.getHours() < 12) {
+                // Si es así, asignamos el valor de la variable con un mensaje matutino
+                msj = "Buenos días";
+            }
+            // Si no es el caso, comprobamos si la hora del sistema es inferior a 21, esto es, 9 P.M.
+            else if (fecha.getHours() < 21) {
+                // Si es así, asignamos el valor de la variable con un mensaje verpertino
+                msj = "Buenas tardes";
+            }
+            else {
+                // El cualquier otro caso, implica que la hora del sistema es posterior a las 9 P.M y 
+                // asignamos el valor de la variable con un mensaje nocturno
+                msj = "Buenas noches";
+            }
+
+            // Asignamos el valor de la variable el mensaje generado al elemento con id h1
+            document.getElementById("h1").innerHTML = msj;
+
+            // Asignamos el valor de la variable fecha en el elemento con id fecha
+            document.getElementById("fecha").innerHTML = fecha;
+
+            // Asignamos el valor de la variable que contiene el nombre del alumno 
+            // concatenándola al html externo del elemento con id h1, dejando de este modo el nombre del 
+            // alumno debajo del elemento
+            document.getElementById("h1").outerHTML += nombreAlumno;
+
+
+            // Inicializamos una variable para almacenar los valores de las propiedades a mostrar.
+            var propiedades = "";
+
+            // Asignamos el texto del apartado a
+            propiedades += 'a) Contenido de innerHTML de elemento identificado por id="h2": ';
+
+            // Concatenamos a la variable el contenido innerHTML del elemento con id h2
+            propiedades += document.getElementById("h2").innerHTML + "<br />";
+
+            // Asignamos el texto del apartado b
+            propiedades += 'b) Contenido de outerHTML de elemento identificado por id="h1": ';
+
+            // Hacemos uso de la función escapeHTML para mostrar la información de la propiedad outerHTML 
+            // del elemento con id h1
+            propiedades += escapeHTML(document.getElementById("h1").outerHTML) + "<br />";
+
+            // Asignamos el texto del apartado c
+            propiedades += 'c) Contenido de de la propiedad global: location.href: ';
+
+            // Concatenamos a la variable el valor href del objeto location
+            propiedades += location.href + "<br />";
+
+            // Asignamos el texto del apartado d
+            propiedades += 'd) Contenido de de la propiedad global: location: ';
+
+            // Concatenamos a la variable el valor del objeto location por completo
+            propiedades += location + "<br />";
+
+            // Asignamos el texto del apartado e
+            propiedades += 'e) Contenido de de las propiedades globales: screen.width y screen.heigth: ';
+
+            // Concatenamos a la variable el valor del ancho y alto de la pantalla
+            propiedades += "Width: " + screen.width + " - Height: " + screen.height + "<br />";
+
+            // Asignamos a la propiedad innerHTML del objeto con id propiedades el valor de la variable 
+            // propiedades donde hemos almacenado el resultado de las operaciones realizadas
+            document.getElementById("propiedades").innerHTML = propiedades;
+
+
+            /**
+             * Función que engloba una cadena pasada como parámetro entre elementos <pre>
+             * @param {type} string La cadena a formatear
+             * @returns {document@call;createElement.innerHTML} Devuelve la propiedad innerHTML 
+             * del elemento <pre> generado con la cadena pasada por parámetro en su interior
+             */
+            function escapeHTML(string) {
+
+                // Creamos un elemento <pre> haciendo uso del DOM
+                var pre = document.createElement('pre');
+
+                // Creamos un elemento de texto con la cadena que se ha pasado por parámetro
+                var text = document.createTextNode(string);
+
+                // Añadimos el elemento de texto como hijo del elemento <pre> creado
+                pre.appendChild(text);
+
+                // Devolvemos la propiedad innerHTML del elemento <pre> creado
+                return pre.innerHTML;
+            }
+
+        </script>
+    </body>
+</html>
