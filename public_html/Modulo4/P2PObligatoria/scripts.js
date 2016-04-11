@@ -370,7 +370,7 @@ function calcularResultado() {
                 else
                 {
                     // Si no es así, devolvemos el resultado de la función ceil sobre el operando1
-                    operando1 = Math.ceil(parseFloat(operando1)) * -1;
+                    operando1 = -Math.ceil(parseFloat(operando1));
                 }
             else
             {
