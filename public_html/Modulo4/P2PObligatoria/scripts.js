@@ -329,6 +329,8 @@ function calcularResultado() {
             operando1 = Math.pow(parseFloat(operando1), parseFloat(operando2));
             operando2 = "";
             operacion = "";
+            
+            break;
 
         }
 
