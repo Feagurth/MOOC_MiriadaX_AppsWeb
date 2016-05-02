@@ -56,12 +56,12 @@ $(function () {
 
     // Asignamos el evento al hacer click en el botón de enviar a memoria
     $("#tom").on("click", function () {
-        memoria(true);
+        memoria(true, $("#display").html());
     });
 
     // Asignamos el evento al hacer click en el botón de recuperar de memoria
     $("#fromm").on("click", function () {
-        memoria(false);
+        memoria(false, $("#display").html());
     });
 
 
@@ -86,20 +86,35 @@ $(function () {
     // introducidos deben ir al operando1 (false) o al operando2 (true)
     nuevoNumero = false;
 
+
+    $("#display").draggable({
+        helper: 'clone',
+        revert: 'invalid'
+    });
+
+    $("#memoria").droppable({
+        drop: function (event, ui) {
+            alert($(ui.draggable).html());
+            memoria(true, $(ui.draggable).html());
+        }
+    });
+
+
 });
 
 /**
  * Función que nos permite trasladar información hacia y desde la memoria de la calculadora
  * @param {bool} aMemoria True si enviamos la información a la memoria de la calculadora, False si la enviamos de la memoria a la calculadora
+ * @param {String} valor El valor añadido a la memoria
  * @returns {undefined}
  */
-function memoria(aMemoria)
+function memoria(aMemoria, valor)
 {
     // Comprobamos la operación a realizar
     if (aMemoria)
     {
         // Asignamos al elemento memoria el contenido del elemento display
-        $("#memoria").html($("#display").html());
+        $("#memoria").html(valor);
     }
     else
     {
@@ -141,13 +156,6 @@ function memoria(aMemoria)
  */
 function parser(valor) {
 
-
-    if (!isNaN(valor)) {
-        if (operacion === "")
-        {
-            nuevaOperacion = true;
-        }
-    }
 
     // Comprobamos si la operación es una operación nueva o 
     // una continuación de una operación anterior
@@ -811,7 +819,7 @@ function peticioncsv(op)
                 // Si ya hay una operación se ha realizado la operación csv como segundo operando
                 // Almacenamos la operación en una variable auxiliar para no perderla
                 auxOp = operacion;
-                
+
                 // Comprobamos la operación pasada como parámetros y asignamos la operación correspondiente
                 if (op === "*")
                 {
@@ -824,7 +832,7 @@ function peticioncsv(op)
                     operacion = "sumatoriocsv";
 
                 }
-                
+
                 // Almacenamos el valor del primer operando en una variable auxiliar
                 aux = operando1;
 
@@ -839,7 +847,7 @@ function peticioncsv(op)
 
                 // Restauramos el valor del primer operando con el valor almacenado en la variable auxiliar
                 operando1 = aux;
-                
+
                 // Restauramos el valor de la operación primigenia desde la variable auxiliar
                 operacion = auxOp;
             }
