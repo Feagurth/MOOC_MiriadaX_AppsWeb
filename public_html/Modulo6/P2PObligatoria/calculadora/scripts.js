@@ -87,17 +87,38 @@ $(function () {
     nuevoNumero = false;
 
 
+    // Definimos la ventana de muestra de dígitos como arrastrable
     $("#display").draggable({
         helper: 'clone',
         revert: 'invalid'
     });
 
+    // Definimos la pantalla de la memoria como arrastrable
+    $("#memoria").draggable({
+        helper: 'clone',
+        revert: 'invalid'
+    });
+
+    // Definimos un evento para la propiedad droppable del 
+    // elemento de la pantalla de la memoria y le asignamos una función
     $("#memoria").droppable({
         drop: function (event, ui) {
-            alert($(ui.draggable).html());
+
+            // Al soltarse el objeto display sobre la pantalla de memoria,
+            // ejecutamos la función memoria como envío de información a la memoria
+            // con el valor que pasa el objeto arrastrable
             memoria(true, $(ui.draggable).html());
         }
     });
+
+
+    $("#display").droppable({
+        drop: function (event, ui) {
+            parser((ui.draggable).html());
+        }
+    });
+
+
 
 
 });
@@ -127,7 +148,6 @@ function memoria(aMemoria, valor)
             // Marcamos la operación como iniciada
             nuevaOperacion = false;
 
-
             // Marcamos el operando1 como introducido
             nuevoNumero = true;
 
@@ -140,11 +160,7 @@ function memoria(aMemoria, valor)
 
         // Actualizamos el valor del display
         $("#display").html($("#memoria").html());
-
     }
-
-
-
 }
 
 
@@ -188,12 +204,25 @@ function parser(valor) {
         }
         else
         {
-            // Comprobamos que el valor del segundo operando no sobrepase el límite del display
-            if (operando2.toString().length < tamanyoDisplay)
+            // Comprobamos si tenemos una operación almacenada
+            if (operacion !== "")
             {
 
-                // Si tenemos una operación, todos los números son del segundo operando
-                operando2 += valor;
+                // Si es así, comprobamos que el valor del segundo operando no sobrepase el límite del display
+                if (operando2.toString().length < tamanyoDisplay)
+                {
+
+                    // Si tenemos una operación, todos los números son del segundo operando
+                    operando2 += valor;
+                }
+            }
+            else
+            {
+                // En caso contrario, es una nueva operación. La marcamos
+                nuevaOperacion = true;
+                
+                // Llamamos a esta misma función pasandole el valor actual
+                parser(valor);
             }
         }
     }
@@ -310,9 +339,6 @@ function parser(valor) {
                         // Comprobamos si la operación introducida es un igual
                         if (valor === "=")
                         {
-                            // Si lo es activamos el flag de nueva operacion
-                            nuevaOperacion = true;
-
                             // Reinicamos la operacion
                             operacion = "";
                         }
