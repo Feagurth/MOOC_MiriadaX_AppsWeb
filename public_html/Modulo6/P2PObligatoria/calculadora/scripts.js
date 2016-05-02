@@ -23,11 +23,20 @@
 $(function () {
 
     // Agregamos a todos los elementos de la clase botón un un evento al hacer click en ellos
-    $(".boton").on("click", function () {
+    $(".btn-primary").on("click", function () {
         // El evento es una función en la cual se pasará el valor del elemento a la función parser
         // la cual será la encargada de implementar la lógica de la aplicación
         parser(this.value);
     });
+
+
+    // Limpiamos los eventos de los botones a los que vamos a crear nuevos eventos específicos
+    $("#sumatoriocsv").off("click");
+    $("#productocsv").off("click");
+    $("#tom").off("click");
+    $("#fromm").off("click");
+    $("#clear").off("click");
+
 
     // Asignamos al elemento con id sumatoriocsv un evento que ejecutará la función peticióncsv al hacer click en él
     $("#sumatoriocsv").on("click", function () {
@@ -44,6 +53,19 @@ $(function () {
         peticioncsv("*");
     });
 
+
+    // Asignamos el evento al hacer click en el botón de enviar a memoria
+    $("#tom").on("click", function () {
+        memoria(true);
+    });
+
+    // Asignamos el evento al hacer click en el botón de recuperar de memoria
+    $("#fromm").on("click", function () {
+        memoria(false);
+    });
+
+
+    // Asignamos el evento al hacer click en el botón de limpiar resultados
     $("#clear").on("click", limpia);
 
 
@@ -60,8 +82,57 @@ $(function () {
     // Definimos el valor de nuevaOperacion
     nuevaOperacion = true;
 
+    // Iniciamos la variable nuevoNumero que nos permitirá saber si los dígitos 
+    // introducidos deben ir al operando1 (false) o al operando2 (true)
+    nuevoNumero = false;
 
 });
+
+/**
+ * Función que nos permite trasladar información hacia y desde la memoria de la calculadora
+ * @param {bool} aMemoria True si enviamos la información a la memoria de la calculadora, False si la enviamos de la memoria a la calculadora
+ * @returns {undefined}
+ */
+function memoria(aMemoria)
+{
+    // Comprobamos la operación a realizar
+    if (aMemoria)
+    {
+        // Asignamos al elemento memoria el contenido del elemento display
+        $("#memoria").html($("#display").html());
+    }
+    else
+    {
+        // Comprobamos el contenido de la memoria debe introducirse en el operando1 o en el operando2
+        if (!nuevoNumero)
+        {
+            // Si no es así, asignamos el valor de la memoria al operando1
+            operando1 = $("#memoria").html();
+
+            // Marcamos la operación como iniciada
+            nuevaOperacion = false;
+
+
+            // Marcamos el operando1 como introducido
+            nuevoNumero = true;
+
+        }
+        else
+        {
+            // Si operando1 tuviese valor, pasaríamos el valor de la memoria al operando2
+            operando2 = $("#memoria").html();
+        }
+
+        // Actualizamos el valor del display
+        $("#display").html($("#memoria").html());
+
+    }
+
+
+
+}
+
+
 
 /**
  * Función que sirve de parser para las pulsaciones de teclas de la calculadora
@@ -69,6 +140,14 @@ $(function () {
  * @returns {undefined}
  */
 function parser(valor) {
+
+
+    if (!isNaN(valor)) {
+        if (operacion === "")
+        {
+            nuevaOperacion = true;
+        }
+    }
 
     // Comprobamos si la operación es una operación nueva o 
     // una continuación de una operación anterior
@@ -81,13 +160,16 @@ function parser(valor) {
 
         // Desactivamos el flag de nueva operacion
         nuevaOperacion = false;
+
+        // Marcamos el operando1 como no introducido
+        nuevoNumero = false;
     }
 
     // Comprobamos si el botón pulsado es un número
     if (!isNaN(valor)) {
 
-        // Si lo es, comprobamos si hemos pulsado con anterioridad un botón de operación
-        if (operacion === "") {
+        // Si lo es, comprobamos si debe introducirse en el operando1 o pertenece a un nuevo número y debe introducirse en el operando2
+        if (!nuevoNumero) {
 
             // Comprobamos que el valor del primer operando no sobrepase el límite del display
             if (operando1.toString().length < tamanyoDisplay)
@@ -172,6 +254,10 @@ function parser(valor) {
 
                     // Asignamos como operación de potencia del resultado
                     operacion = valor;
+
+                    // Marcamos el operando1 como introducido
+                    nuevoNumero = true;
+
                     break;
                 }
 
@@ -226,6 +312,9 @@ function parser(valor) {
                         {
                             // Si la operación no es un igual, la almacenamos en la variable correspodniente
                             operacion = valor;
+
+                            // Marcamos el operando1 como introducido
+                            nuevoNumero = true;
                         }
 
                     }
@@ -233,6 +322,9 @@ function parser(valor) {
                     {
                         // Si no tenemos valores para los dos operadores, almacenamos la operación en la variable correspondiente
                         operacion = valor;
+
+                        // Marcamos el operando1 como introducido
+                        nuevoNumero = true;
                     }
 
                     break;
@@ -245,6 +337,7 @@ function parser(valor) {
     mostrarDatos();
 
 }
+
 
 /**
  * Función donde se realizan las operaciones de la calculadora
@@ -263,6 +356,9 @@ function calcularResultado() {
             operando1 = (parseFloat(operando1) + parseFloat(operando2));
             operando2 = "";
             operacion = "";
+
+            // Marcamos el operando1 como introducido
+            nuevoNumero = true;
             break;
         }
 
@@ -274,6 +370,9 @@ function calcularResultado() {
             operando1 = (parseFloat(operando1) - parseFloat(operando2));
             operando2 = "";
             operacion = "";
+
+            // Marcamos el operando1 como introducido
+            nuevoNumero = true;
             break;
         }
 
@@ -285,6 +384,9 @@ function calcularResultado() {
             operando1 = (parseFloat(operando1) * parseFloat(operando2));
             operando2 = "";
             operacion = "";
+
+            // Marcamos el operando1 como introducido
+            nuevoNumero = true;
             break;
         }
 
@@ -298,6 +400,9 @@ function calcularResultado() {
                 operando1 = (parseFloat(operando1) / parseFloat(operando2));
                 operando2 = "";
                 operacion = "";
+
+                // Marcamos el operando1 como introducido
+                nuevoNumero = true;
             }
             else
             {
@@ -320,8 +425,8 @@ function calcularResultado() {
             operando2 = "";
             operacion = "";
 
-            // Marcamos para que la siguiente sea una nueva operación
-            nuevaOperacion = true;
+            // Marcamos el operando1 como introducido
+            nuevoNumero = true;
             break;
         }
 
@@ -333,8 +438,8 @@ function calcularResultado() {
             operando2 = "";
             operacion = "";
 
-            // Marcamos para que la siguiente sea una nueva operación
-            nuevaOperacion = true;
+            // Marcamos el operando1 como introducido
+            nuevoNumero = true;
             break;
         }
 
@@ -342,12 +447,11 @@ function calcularResultado() {
         {
             // Elevamos el valor del operando1 a 2 y reiniciamos el resto de las variables
             operando1 = Math.pow(parseFloat(operando1), parseFloat(2));
-
             operando2 = "";
             operacion = "";
 
-            // Marcamos para que la siguiente sea una nueva operación
-            nuevaOperacion = true;
+            // Marcamos el operando1 como introducido
+            nuevoNumero = true;
 
             break;
         }
@@ -361,8 +465,8 @@ function calcularResultado() {
             operando2 = "";
             operacion = "";
 
-            // Marcamos para que la siguiente sea una nueva operación
-            nuevaOperacion = true;
+            // Marcamos el operando1 como introducido
+            nuevoNumero = true;
             break;
 
         }
@@ -375,8 +479,8 @@ function calcularResultado() {
             operando2 = "";
             operacion = "";
 
-            // Marcamos para que la siguiente sea una nueva operación
-            nuevaOperacion = true;
+            // Marcamos el operando1 como introducido
+            nuevoNumero = true;
             break;
         }
 
@@ -387,8 +491,8 @@ function calcularResultado() {
             operando2 = "";
             operacion = "";
 
-            // Marcamos para que la siguiente sea una nueva operación
-            nuevaOperacion = true;
+            // Marcamos el operando1 como introducido
+            nuevoNumero = true;
             break;
         }
 
@@ -409,14 +513,18 @@ function calcularResultado() {
                 // cuadrada de un número negativo entra dentro del ámbito de los números irracionales
                 // que no es la finalidad de la práctica
                 operando1 = "Error!";
+
+                // Al producirse un error, marcamos la siguiente como una nueva operación
+                nuevaOperacion = true;
             }
 
 
+            // Reiniciamos las variables del operando2 y de la operación
             operando2 = "";
             operacion = "";
 
-            // Marcamos para que la siguiente sea una nueva operación
-            nuevaOperacion = true;
+            // Marcamos el operando1 como introducido
+            nuevoNumero = true;
             break;
         }
 
@@ -431,8 +539,8 @@ function calcularResultado() {
             operando2 = "";
             operacion = "";
 
-            // Marcamos para que la siguiente sea una nueva operación
-            nuevaOperacion = true;
+            // Marcamos el operando1 como introducido
+            nuevoNumero = true;
             break;
         }
 
@@ -476,6 +584,9 @@ function calcularResultado() {
             // Volcamos el resultado a la variable operando1 para su posterior visualización
             operando1 = resultado;
 
+            // Marcamos el operando1 como introducido
+            nuevoNumero = true;
+
             break;
         }
 
@@ -498,8 +609,12 @@ function calcularResultado() {
                 resultado *= parseFloat(operando1[i]);
             }
 
+
             // Volcamos el resultado a la variable operando1 para su posterior visualización
             operando1 = resultado;
+
+            // Marcamos el operando1 como introducido
+            nuevoNumero = true;
 
             break;
 
@@ -557,6 +672,7 @@ function limpia() {
     operando1 = "";
     operando2 = "";
     operacion = "";
+    nuevoNumero = false;
 
     // Mostramos los datos
     mostrarDatos();
@@ -599,7 +715,6 @@ function parteEntera(n)
  */
 function factorial(n)
 {
-
     // Comprobamos si el valor del número es 1
     if (n === 0)
     {
@@ -635,8 +750,6 @@ function peticioncsv(op)
             // Creamos un mensaje para mostrar al usuario
             mensaje = "Introduzca los valores a sumar separados por comas";
 
-            // Asignamos la operación 
-            operacion = "sumatoriocsv";
 
             break;
         }
@@ -646,8 +759,6 @@ function peticioncsv(op)
             // Creamos un mensaje para mostrar al usuario
             mensaje = "Introduzca los valores a multiplicar separados por comas";
 
-            // Asignamos la operación 
-            operacion = "productocsv";
             break;
         }
     }
@@ -669,18 +780,75 @@ function peticioncsv(op)
             // Eliminamos los espacios en blanco de la cadena introducida por el usuario
             valores = valores.replace(/ /g, "");
 
-            // Si todo es correcto, asignamos los valores del usuario a la varaible operando1
-            operando1 = valores;
+            // Comprobamos si hay una operación pendiente, puesto que se puede realizar una operación csv como segundo operando
+            if (operacion === "")
+            {
+                // Si no la hay, asignamos la operación a realizar dependiendo del parámetro pasado a la función
+                if (op === "*")
+                {
+                    // Asignamos la operación 
+                    operacion = "productocsv";
+                }
+                else
+                {
+                    // Asignamos la operación 
+                    operacion = "sumatoriocsv";
 
-            // Llamamos a la función calcularResultado para que se encargue de realizar la operación
-            calcularResultado();
+                }
 
-            // Reiniciamos todas las variables a excepción de operando1 que es donde se guarda el resultado
-            operacion = "";
-            operando2 = "";
-            nuevaOperacion = true;
+                // Si no hay operación este es el primer operando a introducir, por tanto volcamos los valores del usuario a la variable operando1
+                operando1 = valores;
 
+                // Llamamos a la función calcularResultado para que se encargue de realizar la operación
+                calcularResultado();
 
+                // Reiniciamos todas las variables a excepción de operando1 que es donde se guarda el resultado
+                operacion = "";
+                operando2 = "";
+            }
+            else
+            {
+                // Si ya hay una operación se ha realizado la operación csv como segundo operando
+                // Almacenamos la operación en una variable auxiliar para no perderla
+                auxOp = operacion;
+                
+                // Comprobamos la operación pasada como parámetros y asignamos la operación correspondiente
+                if (op === "*")
+                {
+                    // Asignamos la operación 
+                    operacion = "productocsv";
+                }
+                else
+                {
+                    // Asignamos la operación 
+                    operacion = "sumatoriocsv";
+
+                }
+                
+                // Almacenamos el valor del primer operando en una variable auxiliar
+                aux = operando1;
+
+                // Asignamos los valores introducidos por el usuario en el primer operando
+                operando1 = valores;
+
+                // Realizamos el calculo csv, guardando el resultado en la variable operando1 dentro de la función calcularResultado
+                calcularResultado();
+
+                // Asignamos el resultado al segundo operando
+                operando2 = operando1;
+
+                // Restauramos el valor del primer operando con el valor almacenado en la variable auxiliar
+                operando1 = aux;
+                
+                // Restauramos el valor de la operación primigenia desde la variable auxiliar
+                operacion = auxOp;
+            }
+
+            // Marcamos el operando1 como introducido
+            nuevoNumero = true;
+
+            // Marcamos la operación como iniciada si no lo estuviese
+            nuevaOperacion = false;
         }
         else
         {

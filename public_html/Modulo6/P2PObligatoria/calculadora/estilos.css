@@ -20,33 +20,161 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
     Author     : Luis Cabrerizo Gómez
 */
 
-.boton{
-    margin: 2px;                
-    height: 45px;
-    width: 45px;
-    
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
 
-    background: rgba(226,226,226,1);
-    background: -moz-linear-gradient(top, rgba(226,226,226,1) 0%, rgba(209,209,209,1) 0%, rgba(254,254,254,1) 100%);
-    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(226,226,226,1)), color-stop(0%, rgba(209,209,209,1)), color-stop(100%, rgba(254,254,254,1)));
-    background: -webkit-linear-gradient(top, rgba(226,226,226,1) 0%, rgba(209,209,209,1) 0%, rgba(254,254,254,1) 100%);
-    background: -o-linear-gradient(top, rgba(226,226,226,1) 0%, rgba(209,209,209,1) 0%, rgba(254,254,254,1) 100%);
-    background: -ms-linear-gradient(top, rgba(226,226,226,1) 0%, rgba(209,209,209,1) 0%, rgba(254,254,254,1) 100%);
-    background: linear-gradient(to bottom, rgba(226,226,226,1) 0%, rgba(209,209,209,1) 0%, rgba(254,254,254,1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2e2e2', endColorstr='#fefefe', GradientType=0 );
 
+@media (orientation: portrait) and (min-width: 0px){
+
+    label{
+        font-size: x-small;
+    }
+
+    .calculadora{
+
+        font-size: x-small;
+        width: 100%;
+    }
+
+    .btn-primary{
+        margin: 1px;
+        height: 100%;
+        width: 100%;
+    }
+}        
+
+
+@media (orientation: portrait) and (min-width: 768px)
+{
+    label{
+        font-size: medium;
+    }
+
+    .calculadora{
+
+        font-size: medium;
+        width: 80%;
+    }
+
+    .btn-primary{
+        margin: 1px;
+    }
 }
 
-.calculadora > div {
 
-    margin-left: 10px;
-    margin-bottom: 15px;                
+@media (orientation: portrait) and (min-width: 992px)
+{
+    label{
+        font-size: large;
+    }
 
-    padding: 5px;
-    width: 212px;
+    .calculadora{
+        width: 60%;
+        font-size: large;
+    }
+
+    .btn-primary{
+        margin: 2px;                
+    }
+}
+
+
+@media (orientation: portrait) and (min-width: 1279px)
+{
+    label{
+        font-size: xx-large;
+    }
+
+    .calculadora{
+        width: 40%;
+        font-size: xx-large;
+    }
+
+    .btn-primary{
+        margin: 2px;                
+    }    
+}
+
+@media (orientation: landscape) and (min-width: 0px){
+
+    label{
+        font-size: x-small;
+    }
+
+    .calculadora{
+
+        font-size: x-small;
+        width: 40%;
+    }
+
+    .btn-primary{
+        margin: 1px;
+        height: 100%;
+        width: 100%;
+    }
+}        
+
+
+@media (orientation: landscape) and (min-width: 768px)
+{
+    label{
+        font-size: medium;
+    }
+
+    .calculadora{
+
+        font-size: medium;
+        width: 40%;
+    }
+
+    .btn-primary{
+        margin: 1px;
+    }
+}
+
+
+@media (orientation: landscape) and (min-width: 992px)
+{
+    label{
+        font-size: large;
+    }
+
+    .calculadora{
+        width: 40%;
+        font-size: large;
+    }
+
+    .btn-primary{
+        margin: 2px;                
+    }
+}
+
+
+@media (orientation: landscape) and (min-width: 1279px)
+{
+    label{
+        font-size: xx-large;
+    }
+
+    .calculadora{
+        width: 40%;
+        font-size: xx-large;
+    }
+
+    .btn-primary{
+        margin: 2px;                
+    }    
+}
+
+
+
+.clear{
+    clear: both;
+}
+
+.calculadora
+{
+    font-family: 'VT323';
+
+    margin: auto;
 
     border: 1px solid #C6FFC2;
     -webkit-border-radius: 5px;
@@ -61,53 +189,62 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
     background: -ms-linear-gradient(left, rgba(164,179,87,1) 0%, rgba(117,137,12,1) 100%);
     background: linear-gradient(to right, rgba(164,179,87,1) 0%, rgba(117,137,12,1) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a4b357', endColorstr='#75890c', GradientType=1 );
-
 }
 
-.calculadora > div > div{
-    margin-left: 1px;
-}
+.calculadora > div 
+{
+    margin: 10px;                
+    padding: 5px;
 
-.calculadora{
-
+    border: 1px solid #C6FFC2;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
-
-    background: rgba(98,125,77,1);
-    background: -moz-linear-gradient(left, rgba(98,125,77,1) 0%, rgba(31,59,8,1) 100%);
-    background: -webkit-gradient(left top, right top, color-stop(0%, rgba(98,125,77,1)), color-stop(100%, rgba(31,59,8,1)));
-    background: -webkit-linear-gradient(left, rgba(98,125,77,1) 0%, rgba(31,59,8,1) 100%);
-    background: -o-linear-gradient(left, rgba(98,125,77,1) 0%, rgba(31,59,8,1) 100%);
-    background: -ms-linear-gradient(left, rgba(98,125,77,1) 0%, rgba(31,59,8,1) 100%);
-    background: linear-gradient(to right, rgba(98,125,77,1) 0%, rgba(31,59,8,1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#627d4d', endColorstr='#1f3b08', GradientType=1 );
-
-    width: 247px;
-    height: 110%;
-    padding-top: 15px;
-}
-
-#display{
-    font-size: xx-large; 
-    text-align: right;
-    width: 85%;
-    height: 40px;
-
-    display: inline-block;
 }
 
 #pantallaDatos{
     width: 100%;
-    height: 100%;
+    height: 1.5em;
+}
 
-    display: inline-block;
+
+#display{
+    text-align: right;
+    width: 80%;
+    height: auto;
 }
 
 #operacion{
-    font-size: xx-large;
     width: 10%;
     height: auto;
 
-    display: inline-block;
+}
+
+#pantallaMemoria{
+    width: 100%;
+    height: 1.5em;
+}
+
+
+#memoria{
+    width: 55%;
+    height: 100%;
+    border: 1px dashed white;
+
+    margin: 0px;
+    padding: 0px;
+
+    text-align: right;
+    padding-right: 0.25em;
+    
+    display: block;
+    float: right;
+
+}
+
+#tom, #fromm{
+    width: 20%;
+    display: block;
+    float: left;
+
 }

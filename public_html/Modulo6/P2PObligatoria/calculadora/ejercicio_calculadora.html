@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!--
-Copyright (C) 2016 Super
+Copyright (C) 2016 Luis Cabrerizo Gómez
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License
@@ -23,7 +23,8 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <link type="text/css" rel="stylesheet" href="../css/bootstrap.css" />
-        <!-- <link type="text/css" rel="stylesheet" href="estilos.css" /> -->
+        <link type="text/css" rel="stylesheet" href="estilos.css" />
+        <link href='https://fonts.googleapis.com/css?family=VT323' rel='stylesheet' type='text/css'>
 
         <script src="../js/jquery-1.11.2.min.js"></script>
         <script src="../js/jquery-ui.min.js"></script>
@@ -55,60 +56,75 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
                     </div>
                 </div>
             </nav>
-            <div class="calculadora">
-                <div>
-                    <div id="pantallaDatos">
-                        <label id="operacion"></label>
-                        <label id="display"></label>
+            <div class="container-fluid">         
+                <div class="calculadora">
+                    <div class="row">
+                        <div id="pantallaMemoria">                                                        
+                            <input type="button" class="btn-primary" id="tom" value="toM" />
+                            <input type="button" class="btn-primary" id="fromm" value="fromM" />
+                            <div id="memoria"></div>
+                        </div>
                     </div>
-                </div>
-                <div>
-                    <div>
-                        <input type="button" class="boton" id="sumatoriocsv" value="Sum" />
-                        <input type="button" class="boton" id="productocsv" value="Mult" />
-                        <input type="button" class="boton" id="neg" value="+/-" />
-                        <input type="button" class="boton" id="clear" value="C" />                                        
-                    </div>                      
-                    <div>
-                        <input type="button" class="boton" id="factorial" value="n!" />
-                        <input type="button" class="boton" id="potencia" value="xʸ" />
-                        <input type="button" class="boton" id="potencia2" value="2 ͯ" />
-                        <input type="button" class="boton" value=" " />
-                    </div>                
-                    <div>
-                        <input type="button" class="boton" id="cuadrado" value="x²" />
-                        <input type="button" class="boton" id="inverso" value="1/x" />
-                        <input type="button" class="boton" id="raiz" value="√x" />
-                        <input type="button" class="boton" id="entera" value="[x]" />
+
+                    <div class="row">
+                        <div id="pantallaDatos">
+                            <label id="operacion"></label>
+                            <label id="display"></label>
+                        </div>
                     </div>
-                </div>            
-                <div>
-                    <div>
-                        <input type="button" class="boton" id="7" value="7" />
-                        <input type="button" class="boton" id="8" value="8" />
-                        <input type="button" class="boton" id="9" value="9" />
-                        <input type="button" class="boton" id="division" value="/" />
-                    </div>
-                    <div>
-                        <input type="button" class="boton" id="4" value="4" />
-                        <input type="button" class="boton" id="5" value="5" />
-                        <input type="button" class="boton" id="6" value="6" />                    
-                        <input type="button" class="boton" id="multiplicacion" value="*" />
-                    </div>
-                    <div>
-                        <input type="button" class="boton" id="1" value="1" />                                        
-                        <input type="button" class="boton" id="2" value="2" />
-                        <input type="button" class="boton" id="3" value="3" />
-                        <input type="button" class="boton" id="resta" value="-" />
-                    </div>
-                    <div>
-                        <input type="button" class="boton" id="0" value="0" />
-                        <input type="button" class="boton" id="punto" value="." />
-                        <input type="button" class="boton" id="igual" value="=" />
-                        <input type="button" class="boton" id="suma" value="+" />
+                    <div class="row">
+                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                            <input type="button" class="btn-primary" id="sumatoriocsv" value="Sum" />
+                            <input type="button" class="btn-primary" id="factorial" value="n!" />
+                            <input type="button" class="btn-primary" id="cuadrado" value="x²" />
+                        </div>                      
+                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                            <input type="button" class="btn-primary" id="productocsv" value="Mult" />
+                            <input type="button" class="btn-primary" id="potencia" value="xʸ" />
+                            <input type="button" class="btn-primary" id="inverso" value="1/x" />
+                        </div>                
+                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                            <input type="button" class="btn-primary" id="neg" value="+/-" />
+                            <input type="button" class="btn-primary" id="potencia2" value="2 ͯ" />
+                            <input type="button" class="btn-primary" id="raiz" value="√x" />
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                            <input type="button" class="btn-primary" id="clear" value="C" />    
+                            <input type="button" class="btn-primary" value=" " />
+                            <input type="button" class="btn-primary" id="entera" value="[x]" />                            
+
+                        </div>
+                    </div>            
+                    <div class="row">
+                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                            <input type="button" class="btn-primary" id="7" value="7" />
+                            <input type="button" class="btn-primary" id="4" value="4" />
+                            <input type="button" class="btn-primary" id="1" value="1" />    
+                            <input type="button" class="btn-primary" id="0" value="0" />
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                            <input type="button" class="btn-primary" id="8" value="8" />
+                            <input type="button" class="btn-primary" id="5" value="5" />
+                            <input type="button" class="btn-primary" id="2" value="2" />
+                            <input type="button" class="btn-primary" id="punto" value="." />
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                            <input type="button" class="btn-primary" id="9" value="9" />
+                            <input type="button" class="btn-primary" id="6" value="6" />             
+                            <input type="button" class="btn-primary" id="3" value="3" />
+                            <input type="button" class="btn-primary" id="igual" value="=" />
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                            <input type="button" class="btn-primary" id="division" value="/" />
+                            <input type="button" class="btn-primary" id="multiplicacion" value="*" />                                                        
+                            <input type="button" class="btn-primary" id="resta" value="-" />
+                            <input type="button" class="btn-primary" id="suma" value="+" />
+                        </div>
                     </div>
                 </div>
             </div>
+            <div class="clear"> </div>
+            <div class="panel-footer">Luis Cabrerizo Gómez</div>            
         </div>
     </body>
 </html>
