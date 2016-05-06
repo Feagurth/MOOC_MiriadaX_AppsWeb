@@ -1,0 +1,255 @@
+/*
+Copyright (C) 2016 Luis Cabrerizo Gómez
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
+*/
+/* 
+    Created on : 10-abr-2016, 13:40:25
+    Author     : Luis Cabrerizo Gómez
+*/
+
+
+
+@media (orientation: portrait) and (min-width: 0px){
+
+    label{
+        font-size: x-small;
+    }
+
+    .calculadora{
+
+        font-size: x-small;
+        width: 100%;
+    }
+
+    .btn-primary{
+        margin: 1px;
+        height: 100%;
+        width: 100%;
+    }
+}        
+
+
+@media (orientation: portrait) and (min-width: 768px)
+{
+    label{
+        font-size: medium;
+    }
+
+    .calculadora{
+
+        font-size: medium;
+        width: 80%;
+    }
+
+    .btn-primary{
+        margin: 1px;
+    }
+}
+
+
+@media (orientation: portrait) and (min-width: 992px)
+{
+    label{
+        font-size: large;
+    }
+
+    .calculadora{
+        width: 60%;
+        font-size: large;
+    }
+
+    .btn-primary{
+        margin: 2px;                
+    }
+}
+
+
+@media (orientation: portrait) and (min-width: 1279px)
+{
+    label{
+        font-size: xx-large;
+    }
+
+    .calculadora{
+        width: 40%;
+        font-size: xx-large;
+    }
+
+    .btn-primary{
+        margin: 2px;                
+    }    
+}
+
+@media (orientation: landscape) and (min-width: 0px){
+
+    label{
+        font-size: x-small;
+    }
+
+    .calculadora{
+
+        font-size: x-small;
+        width: 40%;
+    }
+
+    .btn-primary{
+        margin: 1px;
+        height: 100%;
+        width: 100%;
+    }
+}        
+
+
+@media (orientation: landscape) and (min-width: 768px)
+{
+    label{
+        font-size: medium;
+    }
+
+    .calculadora{
+
+        font-size: medium;
+        width: 40%;
+    }
+
+    .btn-primary{
+        margin: 1px;
+    }
+}
+
+
+@media (orientation: landscape) and (min-width: 992px)
+{
+    label{
+        font-size: large;
+    }
+
+    .calculadora{
+        width: 40%;
+        font-size: large;
+    }
+
+    .btn-primary{
+        margin: 2px;                
+    }
+}
+
+
+@media (orientation: landscape) and (min-width: 1279px)
+{
+    label{
+        font-size: xx-large;
+    }
+
+    .calculadora{
+        width: 40%;
+        font-size: xx-large;
+    }
+
+    .btn-primary{
+        margin: 2px;                
+    }    
+}
+
+
+
+.clear{
+    clear: both;
+}
+
+.calculadora
+{
+    font-family: 'VT323';
+
+    margin: auto;
+
+    border: 1px solid #C6FFC2;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+
+    background: rgba(164,179,87,1);
+    background: -moz-linear-gradient(left, rgba(164,179,87,1) 0%, rgba(117,137,12,1) 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, rgba(164,179,87,1)), color-stop(100%, rgba(117,137,12,1)));
+    background: -webkit-linear-gradient(left, rgba(164,179,87,1) 0%, rgba(117,137,12,1) 100%);
+    background: -o-linear-gradient(left, rgba(164,179,87,1) 0%, rgba(117,137,12,1) 100%);
+    background: -ms-linear-gradient(left, rgba(164,179,87,1) 0%, rgba(117,137,12,1) 100%);
+    background: linear-gradient(to right, rgba(164,179,87,1) 0%, rgba(117,137,12,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a4b357', endColorstr='#75890c', GradientType=1 );
+}
+
+.calculadora > div 
+{
+    margin: 10px;                
+    padding: 5px;
+
+    border: 1px solid #C6FFC2;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+#pantallaDatos{
+    width: 100%;
+    height: 1.5em;
+    border: 1px dashed white;
+}
+
+
+#display{
+    text-align: right;
+    width: 80%;
+    height: 100%;
+    float: right;
+    padding-right: 0.5em;
+        
+
+}
+
+#operacion{
+    width: 10%;
+    height: auto;
+
+}
+
+#pantallaMemoria{
+    width: 100%;
+    height: 1.5em;
+}
+
+
+#memoria{
+    width: 55%;
+    height: 100%;
+    border: 1px dashed white;
+
+    margin: 0px;
+    padding: 0px;
+
+    text-align: right;
+    padding-right: 0.25em;
+    
+    display: block;
+    float: right;
+
+}
+
+#tom, #fromm{
+    width: 20%;
+    display: block;
+    float: left;
+
+}
