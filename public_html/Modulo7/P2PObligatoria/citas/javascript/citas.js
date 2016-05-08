@@ -44,6 +44,8 @@ $(function () {
         else
         {
             $("#datos").css("display", "none");
+            
+            select(actual);
         }
     });
 
