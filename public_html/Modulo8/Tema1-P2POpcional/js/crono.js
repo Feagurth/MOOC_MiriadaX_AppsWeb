@@ -21,22 +21,47 @@ $(function () {
     var t, cl = $("#crono");
 
 
+    /**
+     * Función que actualiza el contenido el objeto chrono, añadiendo 0.01 a su 
+     * valor y presentando el resultado en pantalla
+     * @returns {undefined}
+     */
     function mostrar() {
         cl.html((+cl.html() + 0.01).toFixed(2));
     }
     ;
 
+
+    /**
+     * Función que crea un intervalo de tiempo para que se ejecute 
+     * la funcion mostrar cada decima de segundo
+     * @returns {undefined}
+     */
     function arrancar() {
         t = setInterval(mostrar, 10);
     }
     ;
 
+
+    /**
+     * Funcion que desactiva el intervalo de ejecución
+     * @returns {undefined}
+     */
     function parar() {
         clearInterval(t);
         t = undefined;
+
+        $("#lista").append("<li>" + cl.html() + "</li>");
+
+
     }
     ;
 
+
+    /**
+     * Función que alterna las funciones de arrancar y parar
+     * @returns {undefined}
+     */
     function cambiar() {
         if (!t) {
             arrancar();
@@ -47,10 +72,20 @@ $(function () {
     }
     ;
 
+    // Asignamos un evento a la accion tap
     $("#content").on("tap", cambiar);
 
+    // Asignamos un evento a la accion swipe
     $("#content").on("swipe", function () {
-        cl.html("0.00");
+        // Comprobamos si se esta ejecutando el contador
+        if (!t)
+        {
+            // Si no es así, limpiamos el cronometro
+            cl.html("0.00");
+
+            // Limpiamos la lista de resultados
+            $("#lista").empty();
+        }
 
     });
 });
