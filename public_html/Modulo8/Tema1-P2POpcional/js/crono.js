@@ -72,6 +72,39 @@ $(function () {
     }
     ;
 
+    /**
+     * Función que nos permite saber si estamos en un disposivo movil mediante 
+     * la creación de un evneto touch. 
+     * @returns {Boolean} True si el evento se puede crear, False en caso contrario
+     */
+    function isMobile() {
+        try {
+            document.createEvent("TouchEvent");
+            return true;
+        }
+        catch (e) {
+            return false;
+        }
+    }
+    ;
+
+    // Comprobamos si estamos en un dispositivo movil
+    if (isMobile()) {
+
+        // Si es asi, ocultamos los botones y mostramos el texto explicatorio
+        $("#botones").addClass("oculto");
+        $("#texto").addClass("visible");
+    }
+    else
+    {
+        // En caso contrario, ocultamos el texto explicativo 
+        // y mostramos los botones
+        $("#texto").addClass("oculto");
+        $("#botones").addClass("visible");
+
+    }
+
+
     // Asignamos un evento a la accion tap
     $("#content").on("tap", cambiar);
 
@@ -88,4 +121,23 @@ $(function () {
         }
 
     });
+
+    // Asignamos un evento a la accion click del botón iniciar
+    $("#iniciar").on("click", cambiar);
+
+
+    // Asignamos un evento a la accion swipe
+    $("#reset").on("click", function () {
+        // Comprobamos si se esta ejecutando el contador
+        if (!t)
+        {
+            // Si no es así, limpiamos el cronometro
+            cl.html("0.00");
+
+            // Limpiamos la lista de resultados
+            $("#lista").empty();
+        }
+
+    });
+
 });

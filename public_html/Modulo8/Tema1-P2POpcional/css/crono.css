@@ -20,24 +20,37 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
     Author     : Luis Cabrerizo Gómez
 */
 
-#content {
-	background-color: #FFF;
-	text-align: center;
-	width: 50%;
-	margin: 30px auto;
-        border: 1px dashed black;
+#content, #texto, #botones {
+    background-color: #FFF;
+    text-align: center;
+    width: 50%;
+    margin: 30px auto;
 }
 
 .crono {
-	width: 400px;;
-	height: 400px;
-	margin-top: 0px;
+    width: 400px;;
+    height: 400px;
+    margin-top: 0px;
 }
-
 
 #contenedorLista ul {
     list-style-type: none; 
     text-align: center;
-    //margin: 0 auto;
-    padding: 10px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+}
+
+#contenedorLista h3{
+    text-align: center;
+}
+
+#contenedorLista ul li{
+    padding: 5px 0px;
+}
+
+.oculto{
+    display: none;
+}
+
+.visible{
+    display: block;
 }
