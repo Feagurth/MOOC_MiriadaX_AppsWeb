@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+    <head><meta charset="utf-8"><title>FRASES</title>         
+        <link type="text/css" rel="stylesheet" href="css/bootstrap.css" />
+        <link rel="stylesheet" type="text/css" href="css/jquery-confirm.min.css" />
+        <link rel="stylesheet" type="text/css" href="css/citas.css" />
+        <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+        <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="js/bootstrap.js"></script>    
+        <script type="text/javascript" src="js/jquery-confirm.min.js"></script>
+        <script type="text/javascript" src="js/citas.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <nav class="navbar navbar-inverse ">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#miMenu">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span> 
+                        </button>
+                        <a class="navbar-brand" href="index.html">MOOC</a>
+                    </div>
+                    <div class="collapse navbar-collapse" id="miMenu">
+                        <ul class="nav navbar-nav">
+                            <li><a href="index.html">INICIO</a></li>
+                            <li><a href="puzzle.html">PUZZLE</a></li>
+                            <li><a href="calculadora.html">CALCULADORA</a></li> 
+                            <li class="active"><a href="citas.html">FRASES</a></li> 
+                            <!--<li><a href="#">Opción 5</a></li> -->
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <div class="contenido">
+                <nav> 
+                    <ul id="selector"></ul>
+                </nav>
+                <section id="caja" class="container-fluid">
+                    <img id="foto" alt="" src=""/>
+                    <div class="textos">
+                        <p id="frase"></p>
+                        <p id="persona"></p>
+                    </div>
+                </section>
+                <div class="editar"> 
+                    <img src="images/refresh-white.svg" alt="Reiniciar citas" title="Reiniciar citas" id="reiniciar"/>
+                    <img src="images/carat-d-white.svg" alt="Editar citas" title="Editar citas" id="editar"/>
+                </div>
+                <section id="datos">
+                    <div contentEditable="true" id="persona_d"></div>
+                    <div contentEditable="true" id="frase_d"></div>
+                    <div contentEditable="true" id="foto_d"></div>
+                    <div id="botones">
+                        <ul>
+                            <li><img src="images/edit-black.svg" alt="Editar cita" title="Editar cita" id="guardar"/></li>
+                            <li><img src="images/plus-black.svg" alt="Añadir cita" title="Añadir cita" id="nuevo"/></li>
+                            <li><img src="images/delete-black.svg" alt="Eliminar cita" title="Eliminar cita" id="borrar"/></li>
+                        </ul>
+                    </div>
+                </section>
+            </div>            
+        </div>
+        <!-- Div que contiene la estructura html del cuadro de dialogo -->
+        <div id="confirm" class="modal hide fade">
+            <div class="modal-body">
+                Are you sure?
+            </div>
+            <div class="modal-footer">
+                <button type="button" data-dismiss="modal" class="btn btn-primary" id="delete">Delete</button>
+                <button type="button" data-dismiss="modal" class="btn">Cancel</button>
+            </div>
+        </div>
+    </body>
+</html>
+
