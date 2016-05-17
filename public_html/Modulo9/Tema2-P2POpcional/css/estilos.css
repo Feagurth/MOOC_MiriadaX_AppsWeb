@@ -25,6 +25,20 @@ body{
     font-family: 'Droid Sans', 'Helvetica', Arial, sans-serif;
 }
 
+#controles div{
+    display: inline-block;    
+    float: left;
+    margin-right: 25px;
+    width: auto;
+    height: max-content;
+}
+
+#reiniciar {
+    display: block;
+    margin: 40% auto;
+}
+
+
 #latlng{
     display: block;
     margin: 0;
@@ -38,12 +52,14 @@ body{
 
 #map{
     display: block;
+    float:left;
     margin: 0;
     padding: 0;
     position: absolute; /* posición absoluta a navegador */
-    top: 50px;      /* 50px debajo de borde de navegador */
+    top: 75px;      /* 50px debajo de borde de navegador */
     left: 0;        /* ajusta a borde de navegador */
     right: 0;
     bottom: 0;
     background: rgba(0,255,0,0.5); /* verde si no hay mapa */
+    width: 100%;
 }
