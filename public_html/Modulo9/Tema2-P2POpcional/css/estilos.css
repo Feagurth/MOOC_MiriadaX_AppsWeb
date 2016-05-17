@@ -56,7 +56,7 @@ body{
     margin: 0;
     padding: 0;
     position: absolute; /* posición absoluta a navegador */
-    top: 75px;      /* 50px debajo de borde de navegador */
+    top: 75px;      /* 75px debajo de borde de navegador */
     left: 0;        /* ajusta a borde de navegador */
     right: 0;
     bottom: 0;
