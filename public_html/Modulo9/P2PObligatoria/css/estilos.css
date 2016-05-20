@@ -1,0 +1,71 @@
+/*
+Copyright (C) 2016 Luis Cabrerizo Gómez
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
+*/
+/* 
+    Created on : 16-may-2016, 20:08:28
+    Author     : Luis Cabrerizo Gómez
+*/
+
+
+body{
+    font-family: 'Droid Sans', 'Helvetica', Arial, sans-serif;
+}
+
+#controles div{
+    display: inline-block;    
+    float: left;
+    margin-right: 25px;
+    width: auto;
+    height: max-content;
+}
+
+#reiniciar{
+    display: block;
+    margin: 40% auto;    
+}
+
+#compactar{
+    display: block;
+    margin: 33% auto;
+
+}
+
+
+#latlng{
+    display: block;
+    margin: 0;
+    padding: 0;
+    position: absolute; /* posición absoluta a navegador */
+    top: 0;             /* ajusta a borde de navegador */
+    left: 0;
+    right: 0;
+    height: 50px;
+}
+
+#map{
+    display: block;
+    float:left;
+    margin: 0;
+    padding: 0;
+    position: absolute; /* posición absoluta a navegador */
+    top: 75px;      /* 75px debajo de borde de navegador */
+    left: 0;        /* ajusta a borde de navegador */
+    right: 0;
+    bottom: 0;
+    background: rgba(0,255,0,0.5); /* verde si no hay mapa */
+    width: 100%;
+}
